@@ -1,9 +1,10 @@
 
+
 import React from 'react';
 import { useQuiz } from '../context/QuizContext';
 
 const ConfirmationPage: React.FC = () => {
-    const { state } = useQuiz();
+    const { state, prevPage } = useQuiz();
 
     return (
         <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-lg max-w-2xl w-full text-center transform transition-all duration-500 animate-fade-in">
@@ -23,12 +24,17 @@ const ConfirmationPage: React.FC = () => {
             
             <p className="font-bold text-lg mb-4">Clique no botão abaixo para ter acesso completo e imediato.</p>
 
-            <button
-                onClick={() => alert("Iniciando o download do app com o protocolo...")}
-                className="w-full sm:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 text-lg"
-            >
-                Baixar o App com o Protocolo Completo
-            </button>
+            <div className="mt-8 space-y-4">
+                <button
+                    onClick={() => alert("Iniciando o download do app com o protocolo...")}
+                    className="w-full sm:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 text-lg"
+                >
+                    Baixar o App com o Protocolo Completo
+                </button>
+                <button onClick={prevPage} className="w-full text-slate-500 hover:text-slate-700 py-2 rounded-full transition hover:bg-slate-100">
+                    Voltar
+                </button>
+            </div>
 
             <p className="text-sm text-slate-500 mt-6">Tem dúvidas? Fale diretamente conosco no WhatsApp ou Instagram.</p>
         </div>

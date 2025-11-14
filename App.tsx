@@ -8,6 +8,7 @@ import AnxietyPage from './components/AnxietyPage';
 import PhysicalSensationsPage from './components/PhysicalSensationsPage';
 import PreparationPage from './components/PreparationPage';
 import SolutionPage from './components/SolutionPage';
+import FeedbackPage from './components/FeedbackPage';
 import ConfirmationPage from './components/ConfirmationPage';
 
 const PageRenderer: React.FC = () => {
@@ -28,6 +29,8 @@ const PageRenderer: React.FC = () => {
         case 6:
             return <SolutionPage />;
         case 7:
+            return <FeedbackPage />;
+        case 8:
             return <ConfirmationPage />;
         default:
             return <WelcomePage />;
